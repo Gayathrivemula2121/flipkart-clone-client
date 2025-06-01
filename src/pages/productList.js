@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
 function ProductList() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://flipkart-clone-server-coeh.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(err => console.error('Error fetching products:', err));
   }, []);
